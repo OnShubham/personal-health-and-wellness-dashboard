@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../Assets/logo.png";
 import Content from "../Assets/img-1.png";
 import Background from "../Assets/landing.jpg";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -11,24 +12,36 @@ function Home() {
     >
       {/* Header */}
       <div className="p-16">
+        <header>
         <div className="flex  justify-between items-center mx-10 my-4  ">
-          <img src={logo} alt="logo" className="h-20 w-20 -mt-10 " />
-          <ul className="justify-center flex space-x-32  text-2xl font-sans ">
+          <img
+            src={logo}
+            alt="logo"
+            width={"120px"}
+            height={"120px"}
+            className="  -mt-10 "
+          />
+          {/* <ul className="justify-center flex space-x-32  text-2xl font-sans ">
             <li className=" text-white hover:text-indigo-900 ">Home</li>
             <li className=" text-white hover:text-indigo-900">About</li>
             <li className=" text-white hover:text-indigo-900">Contact</li>
-          </ul>
+          </ul> */}
 
-          <div className=" space-x-5 text-2xl font-sans">
+          <div className=" space-x-10 text-2xl font-sans">
             {" "}
-            <button className="bg-indigo-700 w-28 h-12 borde rounded-lg text-white hover:bg-indigo-900">
-              Login
-            </button>
-            <button className="bg-indigo-700 w-28 h-12 borde rounded-lg text-white hover:bg-indigo-900">
+            <Link to="/login">
+              <button className="bg-gray-50 w-36 h-14 border   rounded-xl shadow-lg text-blue-950 hover:bg-gray-300">
+                Login
+              </button>
+            </Link>
+            <Link to="/Signup">
+            <button className="bg-indigo-700 w-36 h-14  rounded-xl shadow-lg text-white hover:bg-indigo-900">
               Sign Up
             </button>
+            </Link>
           </div>
         </div>
+        </header>
         {/* Header End */}
         <div className="Content p-10">
           <div className="flex justify-around">
@@ -64,4 +77,3 @@ function Home() {
 }
 
 export default Home;
-  
